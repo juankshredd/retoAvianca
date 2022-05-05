@@ -35,8 +35,8 @@ public class Metodos {
             System.out.println("3. Datos de los asociados: \n");
 
             for(int i = 0; i < personas.size(); i++){
-                String[] trabajador = personas.get(i).split("".replace("-", " "));
-                String pNombre = trabajador[0];
+                String trabajador = personas.get(i).replace("-", ",");
+               /* String pNombre = trabajador[0];
                 String sNombre = trabajador[1];
                 String pApellido = trabajador[2];
                 String sApellido = trabajador[3];
@@ -47,7 +47,7 @@ public class Metodos {
                 dict.put("Primer apellido: ", pApellido);
                 dict.put("Segundo apellido: ", sApellido);
                 dict.put("Telefono: ", telefono);
-                dict.put("Fecha de Ingreso: ", fIngreso);
+                dict.put("Fecha de Ingreso: ", fIngreso);*/
                 cont1 +=1;
 
                 System.out.println("Asociado: "+ cont1);
