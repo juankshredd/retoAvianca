@@ -17,51 +17,35 @@ public class Metodos {
             fr = new FileReader(archivo);
             br = new BufferedReader(fr);
             String line;
-            int cont = 0;
-            int cont1 = 0;
             List<String> personas = new ArrayList();
-            Map<String, String> dict = new Hashtable<>();
 
             while((line = br.readLine()) != null){
                 System.out.println(line);
-                cont += 1;
-                personas.add(line.toString());
+                personas.add(line);
             }
 
-            System.out.println("\n");
-            System.out.println("2. el numero de filas del archivo es: " + cont);
-            System.out.println("************************************************");
-            System.out.println("\n");
-            System.out.println("3. Datos de los asociados: \n");
+            System.out.println("\n2. el numero de filas del archivo es: " + personas.size());
+            System.out.println("\n3. Datos de los asociados: ");
 
             for(int i = 0; i < personas.size(); i++){
-                String trabajador = personas.get(i).replace("-", ",");
-               /* String pNombre = trabajador[0];
-                String sNombre = trabajador[1];
-                String pApellido = trabajador[2];
-                String sApellido = trabajador[3];
-                String telefono = trabajador[4];
-                String fIngreso = trabajador[5];
-                dict.put("Primer nombre: ", pNombre);
-                dict.put("Segundo nombre: ", sNombre);
-                dict.put("Primer apellido: ", pApellido);
-                dict.put("Segundo apellido: ", sApellido);
-                dict.put("Telefono: ", telefono);
-                dict.put("Fecha de Ingreso: ", fIngreso);*/
-                cont1 +=1;
+                String string = personas.get(i);
+                String[] asociado = string.split("-");
 
-                System.out.println("Asociado: "+ cont1);
-                System.out.println(trabajador);
+                String fechaAsociado = asociado[5];
+                String [] fecha = fechaAsociado.split("/");
+
+                System.out.println("\nAsociado " + (1+i) + "\n" + "Primer nombre: " + asociado[0]  + "\nSegundo nombre: " + asociado[1] +
+                        "\nPrimer apellido: " + asociado[2] + "\nSegundo apellido: " + asociado[3] +
+                        "\nTelefono: " + asociado[4] + "\nFecha de ingreso: " + "\nDia: " + fecha[0]+ " Mes: "  + fecha[1] +
+                        " Año: " + fecha[2]);
             }
-
-
 
             br.close();
             fr.close();
 
         }
         catch(Exception e){
-        JOptionPane.showMessageDialog(null, "Hubo un error al leer el archivo ".concat(e.toString()));
+            JOptionPane.showMessageDialog(null, "Hubo un error al leer el archivo ".concat(e.toString()));
         }
     }
 }
