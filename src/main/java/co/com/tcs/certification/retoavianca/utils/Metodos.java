@@ -111,6 +111,7 @@ public class Metodos {
         FileReader fr;
         BufferedReader br;
         String persona ="";
+        String wholeName = "";
         try {
             String nombreArchivo;
             archivo = new File("src/main/java/co/com/tcs/certification/retoavianca/utils/insumo.txt");
@@ -123,11 +124,100 @@ public class Metodos {
                 System.out.println(line);
                 personas.add(line);
             }
+
             persona = personas.get(0);
+            asociado = persona.split("-");
+            wholeName = asociado[0]+asociado[1]+asociado[2]+asociado[3];
         } catch (IOException e) {
             e.printStackTrace();
         }
 
-        return persona;
+        return wholeName;
+    }
+    public String phone(){
+        File archivo;
+        FileReader fr;
+        BufferedReader br;
+        String persona ="";
+        String phone = "";
+        try {
+            String nombreArchivo;
+            archivo = new File("src/main/java/co/com/tcs/certification/retoavianca/utils/insumo.txt");
+            fr = new FileReader(archivo);
+            br = new BufferedReader(fr);
+            String line;
+            List<String> personas = new ArrayList();
+
+            while((line = br.readLine()) != null){
+                System.out.println(line);
+                personas.add(line);
+            }
+
+            persona = personas.get(0);
+            asociado = persona.split("-");
+            phone = asociado[4];
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        return phone;
+    }
+    public String email(){
+        File archivo;
+        FileReader fr;
+        BufferedReader br;
+        String persona ="";
+        String email = "";
+        try {
+            String nombreArchivo;
+            archivo = new File("src/main/java/co/com/tcs/certification/retoavianca/utils/insumo.txt");
+            fr = new FileReader(archivo);
+            br = new BufferedReader(fr);
+            String line;
+            List<String> personas = new ArrayList();
+
+            while((line = br.readLine()) != null){
+                System.out.println(line);
+                personas.add(line);
+            }
+
+            persona = personas.get(0);
+            asociado = persona.split("-");
+            email = asociado[0]+ "@" + asociado[2] + ".com";
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        return email;
+    }
+    public String userName(){
+        File archivo;
+        FileReader fr;
+        BufferedReader br;
+        String persona ="";
+        String userName = "";
+        try {
+            String nombreArchivo;
+            archivo = new File("src/main/java/co/com/tcs/certification/retoavianca/utils/insumo.txt");
+            fr = new FileReader(archivo);
+            br = new BufferedReader(fr);
+            String line;
+            List<String> personas = new ArrayList();
+
+            while((line = br.readLine()) != null){
+                System.out.println(line);
+                personas.add(line);
+            }
+
+            persona = personas.get(0);
+            asociado = persona.split("-");
+            userName = asociado[0].substring(0,2)+ asociado[1]
+                    .substring(0,2) + asociado[2].substring(0,2) +
+                    asociado[3].substring(0,2);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        return userName;
     }
 }

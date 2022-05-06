@@ -1,8 +1,8 @@
-<?xml version="1.0" encoding="UTF-8"?><testsuite errors="0" failures="1" name="as a user want to the form of the page" skipped="0" tests="1" time="41.1" timestamp="2022-05-05 11:42:46"><testcase name="the user complete the form"><failure message="&#10;Expected: &quot;This is just a dummy form,&quot;&#10;     but: was &quot;This is just a dummy form, you just clicked SUBMIT BUTTON&quot;" type="java.lang.AssertionError">
+<?xml version="1.0" encoding="UTF-8"?><testsuite errors="0" failures="1" name="as a user want to the form of the page" skipped="0" tests="1" time="20.63" timestamp="2022-05-06 09:20:35"><testcase name="the user complete the form"><failure message="&#10;Expected: &quot;This is just a dummy form,&quot;&#10;     but: was &quot;This is just a dummy form, you just clicked SUBMIT BUTTON&quot;" type="java.lang.AssertionError">
 Expected: "This is just a dummy form,"
      but: was "This is just a dummy form, you just clicked SUBMIT BUTTON"</failure><system-err>
 Expected: "This is just a dummy form,"
      but: was "This is just a dummy form, you just clicked SUBMIT BUTTON"&#13;
 co.com.tcs.certification.retoavianca.stepdefinitions.RetoAviancaStepDefinitions.iShouldWatchTheMassage(RetoAviancaStepDefinitions.java:42)&#13;
-✽.I should watch the massage This is just a dummy form,(src/test/resources/features/reto_avianca.feature:20)&#13;
+✽.I should watch the massage This is just a dummy form,(src/test/resources/features/reto_avianca.feature:13)&#13;
 </system-err></testcase></testsuite>
