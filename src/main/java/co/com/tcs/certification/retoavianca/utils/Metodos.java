@@ -8,60 +8,11 @@ import java.util.*;
 
 public class Metodos {
 
-    private String pName;
-    private String sName;
-    private String pApe;
-    private String sApe;
-    private String phone;
-    private String email;
-    private String country;
-    private String city;
-    private String username;
-    private String password;
-    private String[] asociado;
+    private String[] dude;
 
     public Metodos() {
     }
 
-    public String getpName() {
-        return pName;
-    }
-
-    public String getsName() {
-        return sName;
-    }
-
-    public String getpApe() {
-        return pApe;
-    }
-
-    public String getsApe() {
-        return sApe;
-    }
-
-    public String getPhone() {
-        return phone;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public String getCountry() {
-        return country;
-    }
-
-    public String getCity() {
-        return city;
-    }
-
-    public String getUsername() {
-        return username;
-    }
-
-    public String getPassword() {
-        return password;
-    }
 
     public void lectura(String nombreArchivo){
         File archivo;
@@ -80,21 +31,23 @@ public class Metodos {
                 System.out.println(line);
                 personas.add(line);
             }
-
+            System.out.println("************************************************");
             System.out.println("\n2. el numero de filas del archivo es: " + personas.size());
+            System.out.println("************************************************");
             System.out.println("\n3. Datos de los asociados: ");
 
             for(int i = 0; i < personas.size(); i++){
                 String string = personas.get(i);
-                asociado = string.split("-");
+                dude = string.split("-");
 
-                String fechaAsociado = asociado[5];
+                String fechaAsociado = dude[5];
                 String [] fecha = fechaAsociado.split("/");
 
-                System.out.println("\nAsociado " + (1+i) + "\n" + "Primer nombre: " + asociado[0]  + "\nSegundo nombre: " + asociado[1] +
-                        "\nPrimer apellido: " + asociado[2] + "\nSegundo apellido: " + asociado[3] +
-                        "\nTelefono: " + asociado[4] + "\nFecha de ingreso: " + "\nDia: " + fecha[0]+ " Mes: "  + fecha[1] +
+                System.out.println("\nAsociado " + (1+i) + "\n" + "Primer nombre: " + dude[0]  + "\nSegundo nombre: " + dude[1] +
+                        "\nPrimer apellido: " + dude[2] + "\nSegundo apellido: " + dude[3] +
+                        "\nTelefono: " + dude[4] + "\nFecha de ingreso: " + "\nDia: " + fecha[0]+ " Mes: "  + fecha[1] +
                         " Año: " + fecha[2]);
+                System.out.println("************************************************");
             }
 
             br.close();
@@ -121,13 +74,12 @@ public class Metodos {
             List<String> personas = new ArrayList();
 
             while((line = br.readLine()) != null){
-                System.out.println(line);
                 personas.add(line);
             }
 
             persona = personas.get(0);
-            asociado = persona.split("-");
-            wholeName = asociado[0]+asociado[1]+asociado[2]+asociado[3];
+            dude = persona.split("-");
+            wholeName = dude[0]+dude[1]+dude[2]+dude[3];
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -149,13 +101,12 @@ public class Metodos {
             List<String> personas = new ArrayList();
 
             while((line = br.readLine()) != null){
-                System.out.println(line);
                 personas.add(line);
             }
 
             persona = personas.get(0);
-            asociado = persona.split("-");
-            phone = asociado[4];
+            dude = persona.split("-");
+            phone = dude[4];
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -177,13 +128,12 @@ public class Metodos {
             List<String> personas = new ArrayList();
 
             while((line = br.readLine()) != null){
-                System.out.println(line);
                 personas.add(line);
             }
 
             persona = personas.get(0);
-            asociado = persona.split("-");
-            email = asociado[0]+ "@" + asociado[2] + ".com";
+            dude = persona.split("-");
+            email = dude[0]+ "@" + dude[2] + ".com";
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -205,15 +155,14 @@ public class Metodos {
             List<String> personas = new ArrayList();
 
             while((line = br.readLine()) != null){
-                System.out.println(line);
                 personas.add(line);
             }
 
             persona = personas.get(0);
-            asociado = persona.split("-");
-            userName = asociado[0].substring(0,2)+ asociado[1]
-                    .substring(0,2) + asociado[2].substring(0,2) +
-                    asociado[3].substring(0,2);
+            dude = persona.split("-");
+            userName = dude[0].substring(0,2)+ dude[1]
+                    .substring(0,2) + dude[2].substring(0,2) +
+                    dude[3].substring(0,2);
         } catch (IOException e) {
             e.printStackTrace();
         }

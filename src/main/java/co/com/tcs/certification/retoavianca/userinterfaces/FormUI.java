@@ -10,8 +10,6 @@ public class FormUI {
             .located(By.name("phone"));
     public static final Target EMAIL = Target.the("email")
             .located(By.name("email"));
-    public static final Target COUNTRY = Target.the("country")
-            .located(By.name("country"));
     public static final Target CITY = Target.the("city")
             .located(By.name("city"));
     public static final Target USERNAME = Target.the("username")

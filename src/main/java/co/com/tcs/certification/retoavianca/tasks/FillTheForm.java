@@ -23,9 +23,6 @@ public class FillTheForm implements Task {
     public<T extends Actor> void performAs(T actor){
 
         WaitUntil.the(FormUI.NAME, WebElementStateMatchers.isEnabled()).forNoMoreThan(10).seconds();
-
-        System.out.println("Entro al task");
-
         Metodos persona = new Metodos();
         System.out.println(persona.datos());
         actor.attemptsTo(Enter.theValue(persona.datos()).into(FormUI.NAME),

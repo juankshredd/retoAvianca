@@ -9,5 +9,6 @@ public class App {
         System.out.println("************************************************");
         System.out.println("1. El archivo contiene los siguientes datos: \n");
         met.lectura("src/main/java/co/com/tcs/certification/retoavianca/utils/insumo.txt");
+        System.out.println("************************************************");
     }
 }
