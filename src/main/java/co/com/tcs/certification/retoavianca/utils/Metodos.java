@@ -4,7 +4,64 @@ import java.io.*;
 import javax.swing.JOptionPane;
 import java.util.*;
 
+
+
 public class Metodos {
+
+    private String pName;
+    private String sName;
+    private String pApe;
+    private String sApe;
+    private String phone;
+    private String email;
+    private String country;
+    private String city;
+    private String username;
+    private String password;
+    private String[] asociado;
+
+    public Metodos() {
+    }
+
+    public String getpName() {
+        return pName;
+    }
+
+    public String getsName() {
+        return sName;
+    }
+
+    public String getpApe() {
+        return pApe;
+    }
+
+    public String getsApe() {
+        return sApe;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public String getCountry() {
+        return country;
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public String getPassword() {
+        return password;
+    }
 
     public void lectura(String nombreArchivo){
         File archivo;
@@ -29,7 +86,7 @@ public class Metodos {
 
             for(int i = 0; i < personas.size(); i++){
                 String string = personas.get(i);
-                String[] asociado = string.split("-");
+                asociado = string.split("-");
 
                 String fechaAsociado = asociado[5];
                 String [] fecha = fechaAsociado.split("/");
@@ -47,5 +104,30 @@ public class Metodos {
         catch(Exception e){
             JOptionPane.showMessageDialog(null, "Hubo un error al leer el archivo ".concat(e.toString()));
         }
+    }
+
+    public String datos() {
+        File archivo;
+        FileReader fr;
+        BufferedReader br;
+        String persona ="";
+        try {
+            String nombreArchivo;
+            archivo = new File("src/main/java/co/com/tcs/certification/retoavianca/utils/insumo.txt");
+            fr = new FileReader(archivo);
+            br = new BufferedReader(fr);
+            String line;
+            List<String> personas = new ArrayList();
+
+            while((line = br.readLine()) != null){
+                System.out.println(line);
+                personas.add(line);
+            }
+            persona = personas.get(0);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        return persona;
     }
 }
