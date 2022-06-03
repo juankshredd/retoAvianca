@@ -1,4 +1,4 @@
-#Actor: Christian Tapias Escudero - t.christian@tcs.com
+
 
 Feature: as a user want to the form of the page
 
